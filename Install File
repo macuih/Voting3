@@ -1,0 +1,106 @@
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=22
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update
+sudo apt-get install nodejs -y
+npm install web3
+npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
+npm i @openzeppelin/contracts@4.5.0
+
+
+
+npx create-react-app voting3
+cd voting3
+
+
+
+
+npm start
+# set your inbound rule appropriately
+# set a tap to     <dns-from-aws-console>:3000
+# "hello world" should now show up!
+
+
+npx hardhat init
+
+# double check dns
+vi hardhat.config.js
+
+vi contracts/Voting.sol
+
+# double check dns
+vi src/App.js
+
+# from project directory
+mkdir scripts       
+vi scripts/deploy.js
+
+cd test
+vi Voting.js
+
+
+npx hardhat test
+
+npx hardhat test
+
+
+  Voting deployment
+    ✔ Contract has been deployed successfully (665ms)
+
+  Voting variable test
+    ✔ contract variables set appropriately
+
+  Voting variable test
+    ✔ contract variables set appropriately
+
+  owner()
+deployer HardhatEthersSigner {
+  _gasLimit: 30000000,
+  address: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+  provider: HardhatEthersProvider {
+    _hardhatProvider: LazyInitializationProviderAdapter {
+      _providerFactory: [AsyncFunction (anonymous)],
+      _emitter: [EventEmitter],
+      _initializingPromise: [Promise],
+      provider: [BackwardsCompatibilityProviderAdapter]
+    },
+   },
+    _networkName: 'hardhat',
+    _blockListeners: [],
+    _transactionHashListeners: Map(0) {},
+    _eventListeners: []
+  }
+}
+undefined 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+    ✔ returns the address of the owner
+
+  vote For Johnny
+0n
+1n
+    ✔ test my vote function
+
+
+  5 passing (736ms)
+
+
+****Have to remove these files:
+/home/ubuntu/voting3/contracts rm Lock.sol
+/home/ubuntu/voting3/test rm Lock.js
+
+
+/home/ubuntu/voting3   npx hardhat node --hostname ec2-35-86-73-162.us-west-2.compute.amazonaws.com
+/home/ubuntu/voting3 npx   hardhat run deploy.js --network localhost
+
+/home/ubuntu/voting3 npm start   
+
+
+
+
+NOTES:
+in case of This site can’t provide a secure connectionec2-54-218-32-243.us-west-2.compute.amazonaws.com sent an invalid response.
+ERR_SSL_PROTOCOL_ERROR
+
+use http vs https
